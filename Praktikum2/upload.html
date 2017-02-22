@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Üleslaadimine</title>
+</head>
+<body>
+<ul>
+  <li>
+    <a href="pealeht.html">Pealeht</a>
+  </li>
+  <li>
+    <a href="galerii.html">Galerii</a>
+  </li>
+  <li>
+    <a href="login.html">Sisselogimine</a>
+  </li>
+  <li>
+    <a href="upload.html">Üleslaadimine</a>
+  </li>
+  <li>
+    <a href="register.html">Registreerumine</a>
+  </li>
+</ul>
+<form action="pealeht.html" method="POST" enctype="multipart/form-data">
+<table>
+	<tr>
+	<td>Pealkiri:</td>
+	<td><input type="text" name="pealkiri"></td>
+	</tr>
+	<tr>
+	<td>Autor:</td>
+	<td><input type="text" name="autor"></td>
+	</tr>
+	<tr>
+	<td>Thumbnail:</td>
+	<td><input type="file" name="thumbnail"></td>
+	</tr>
+	<tr>
+	<td>Suur pilt:</td>
+	<td><input type="file" name="img"></td>
+	</tr>
+</table>
+<input type="submit">
+</form>
+</body>
+</html>
