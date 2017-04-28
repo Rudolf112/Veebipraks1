@@ -1,0 +1,14 @@
+CREATE TABLE rudolf_loomaaed (id integer PRIMARY KEY auto_increment, nimi varchar(50), vanus integer, liik text, puur integer)
+
+INSERT INTO rudolf_loomaaed (nimi, vanus, liik, puur) VALUES ('Maali', 2, 'kits', 1), ('Tuuli', 3, 'emis', 1), ('Triibik', 1, 'kaelkirjak', 2), ('Muulik', 4, 'j‰‰r', 3), ('Juulik', 2, 'j‰‰r', 4)
+
+SELECT nimi, puur FROM rudolf_loomaaed WHERE puur=1
+
+SELECT max(vanus) FROM rudolf_loomaaed
+
+SELECT min(vanus) FROM rudolf_loomaaed
+
+SELECT puur, count(puur) FROM rudolf_loomaaed GROUP BY puur
+
+UPDATE rudolf_loomaaed SET vanus=vanus+1
+
