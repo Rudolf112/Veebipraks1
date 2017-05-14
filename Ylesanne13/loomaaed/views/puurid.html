@@ -1,0 +1,17 @@
+<?php
+if (!empty($puurid)):
+    foreach($puurid as $key => $loom):
+
+?>
+<div>
+    Puuris nr. <?php echo ($key);?> asuvad loomad <?php foreach ($loom as $value):?>
+<p><img src="<?php echo $value;?>"></p>
+    <?php next ($puurid);?>
+<?php
+endforeach;?>
+</div>
+<?php
+endforeach;
+endif;
+// kasutatud https://github.com/madisvorklaev/vrakendused1/blob/master/loomaaed/views/puurid.html
+?>
