@@ -12,7 +12,7 @@ function connect_db(){
 }
 
 function logi(){
-	if (isset($_SESSION["logged_in"])){
+    if (isset($_SESSION["logged_in"])){
         header("Location: ?page=loomad");
     }
         if (isset($_POST['user']) && isset($_POST['pass'])){
@@ -23,7 +23,9 @@ function logi(){
         $result = mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
         if (mysqli_num_rows($result)>0){
             $_SESSION["logged_in"] = TRUE;
-            $_SESSION['user'] = $_POST["user"];
+            $_SESSION["user"] = $_POST["user"];
+            $row = mysqli_fetch_array($result);
+            $_SESSION['roll'] = $row['roll'];
             header("Location: ?page=loomad");
         }
         }
@@ -46,7 +48,7 @@ function kuva_puurid(){
         $puurid[$row['puur']] = $puurinr;
     }
     
-    $query = "SELECT puur, liik FROM rudolf_loomaaed";
+    $query = "SELECT puur, liik, id FROM rudolf_loomaaed";
     $result = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($result)) {
         array_push($puurid[$row['puur']], $row['liik']); //täidan eelmises tsüklis loodud array elemendid nimedega
@@ -59,6 +61,10 @@ function lisa(){
 	global $connection;
     $nimi = "";
     $puur = "";
+    if ($_SESSION['roll'] == "user")
+    {
+        header("Location: ?page=loomad");
+    }
     if (isset($_SESSION["logged_in"]) && isset($_POST["nimi"]) && isset($_POST["puur"])){
         $nimi = mysqli_real_escape_string($connection, $_POST["nimi"]);
         $puur = mysqli_real_escape_string($connection, $_POST["puur"]);

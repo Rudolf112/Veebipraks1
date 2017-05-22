@@ -1,11 +1,11 @@
 <?php
 if (!empty($puurid)):
     foreach($puurid as $key => $loom):
-
 ?>
 <div>
     Puuris nr. <?php echo ($key);?> asuvad loomad <?php foreach ($loom as $value):?>
 <p><img src="<?php echo $value;?>"></p>
+    <a href="?page=muuda&id= <?php echo $ ?> ">MUUDA</a>
     <?php next ($puurid);?>
 <?php
 endforeach;?>
