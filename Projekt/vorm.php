@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
+<title>Autode lisamine</title>
 <style>
     li ul {display:none;}
     li input:checked + ul {display:block;}
@@ -42,7 +43,7 @@ function valideeri() {
     }
     var pfilter = document.forms["vorm"]["tfhooldus"].value;
     var filterOn = document.forms["vorm"]["tahmafilter"].value;
-    if (pfilter == "" && filterOn == "jah" && kytus =="diisel") {
+    if (pfilter == "" && filterOn == "jah" && kytus == "diisel") {
         alert("Järgmine tahmafiltri hooldus peab olema täidetud");
         return false;
     }
@@ -50,6 +51,7 @@ function valideeri() {
 </script>
 </head>
 <body>
+    <p><a href="vaata.php">Vaata autosid</a></p>
     <form name="vorm" action="lisa.php" method="POST" enctype="multipart/form-data" onsubmit="return valideeri()">
 	   <ul>
         <li>Mark<br/><input type="text" name="mark" placeholder="mark" value="<?php if (isset($auto['mark'])) echo htmlspecialchars($auto['mark']); ?>"/></li>
@@ -63,7 +65,7 @@ function valideeri() {
         <li>Kütus:</li> 
         <li>bensiin<input type="radio" name="kytus" value="bensiin">
         <ul>
-           <li>Järgmine süüteküünalde vahetus (odom näit) <input type="number" name="sparks" value="<?php if (isset($auto['sparks'])) echo htmlspecialchars($auto['sparks']); ?>"/>
+           <li>Järgmine süüteküünalde vahetus (odom näit) <input type="number" name="sparks"/>
             </li>
             </ul>
            </li>

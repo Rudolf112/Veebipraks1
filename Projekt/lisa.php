@@ -35,5 +35,5 @@ function connect_db(){
     
     $query = "INSERT INTO rpurge_autod (Mark, Regnr, kW, Odom, Next_yv, Next_oil, Kytus, Sparks, Tahmafilter, Tahmafiltri_hooldus) VALUES ('$mark', '$regnr', '$kw', '$odo', '$yv', '$oil', '$kytus', '$sparks', '$tahmafilter', '$tfhooldus')";
     $result = mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
-
+    header("Location: vaata.php");
 ?>
