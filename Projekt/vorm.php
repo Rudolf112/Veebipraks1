@@ -54,16 +54,16 @@ function valideeri() {
     <p><a href="vaata.php">Vaata autosid</a></p>
     <form name="vorm" action="lisa.php" method="POST" enctype="multipart/form-data" onsubmit="return valideeri()">
 	   <ul>
-        <li>Mark<br/><input type="text" name="mark" placeholder="mark" value="<?php if (isset($auto['mark'])) echo htmlspecialchars($auto['mark']); ?>"/></li>
-	    <li>Reg nr<br/><input type="text" name="regnr" placeholder="regnr" title="Auto reg nr kujul 123ABC" pattern="[0-9][0-9][0-9][A-Z][A-Z][A-Z]" value="<?php if (isset($auto['regnr']))  echo htmlspecialchars($auto['regnr']); ?>"/></li>
-	    <li>kW arv<br/><input type="number" name="kw" placeholder="kW arv" value="<?php if (isset($auto['kw'])) echo htmlspecialchars($auto['kw']); ?>"/></li>
-        <li>Odomeetri hetknäit<br/><input type="number" name="odo" placeholder="odom näit" value="<?php if (isset($auto['odo'])) echo htmlspecialchars($auto['odo']); ?>"/></li>
+        <li>Mark<br/><input type="text" name="mark" placeholder="mark" value="<?php if (isset($auto['mark'])) echo htmlspecialchars($auto['mark']); ?>"required/></li>
+	    <li>Reg nr<br/><input type="text" name="regnr" placeholder="regnr" title="Auto reg nr kujul 123ABC" pattern="[0-9][0-9][0-9][A-Z][A-Z][A-Z]" value="<?php if (isset($auto['regnr']))  echo htmlspecialchars($auto['regnr']); ?>"required/></li>
+	    <li>kW arv<br/><input type="number" name="kw" placeholder="kW arv" value="<?php if (isset($auto['kw'])) echo htmlspecialchars($auto['kw']); ?>" required/></li>
+        <li>Odomeetri hetknäit<br/><input type="number" name="odo" placeholder="odom näit" value="<?php if (isset($auto['odo'])) echo htmlspecialchars($auto['odo']); ?>"required/></li>
    
-        <li>Järgmine ülevaatus<br/><input type="month" name="yv" value="<?php if (isset($auto['yv'])) echo htmlspecialchars($auto['yv']); ?>"/></li>
-        <li>Järgmine õlivahetus(odom näit)<br/><input type="number" name="oil" value="<?php if (isset($auto['oil'])) echo htmlspecialchars($auto['oil']); ?>"/></li>
+        <li>Järgmine ülevaatus<br/><input type="month" name="yv" value="<?php if (isset($auto['yv'])) echo htmlspecialchars($auto['yv']); ?>"required/></li>
+        <li>Järgmine õlivahetus(odom näit)<br/><input type="number" name="oil" value="<?php if (isset($auto['oil'])) echo htmlspecialchars($auto['oil']); ?>"required/></li>
            
         <li>Kütus:</li> 
-        <li>bensiin<input type="radio" name="kytus" value="bensiin">
+        <li>bensiin<input type="radio" name="kytus" value="bensiin" required>
         <ul>
            <li>Järgmine süüteküünalde vahetus (odom näit) <input type="number" name="sparks"/>
             </li>

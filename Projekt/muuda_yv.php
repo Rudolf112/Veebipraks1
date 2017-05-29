@@ -11,7 +11,7 @@
     $uusnait = "";
     $id = mysqli_real_escape_string($connection, $_POST["id"]);
     $uusnait = mysqli_real_escape_string($connection, $_POST["uusnait"]);
-    $query ="UPDATE rpurge_autod SET Odom='$uusnait' WHERE ID='$id'";
+    $query ="UPDATE rpurge_autod SET Next_yv='$uusnait' WHERE ID='$id'";
     mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
     header("Location: vaata.php");
 ?>

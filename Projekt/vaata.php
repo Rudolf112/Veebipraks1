@@ -57,9 +57,27 @@
     </table>
     <form action="muuda_odo.php" method="POST">
     <p>Uuenda odomeetri näitu (esimesse lahtrisse auto ID ja teise uut näit)</p>
-        <input type="number" name="id" />
-        <input type="number" name="uusnait" />
+        <input type="number" name="id" required/>
+        <input type="number" name="uusnait" required/>
         <input type="submit" value="Muuda" />
+    </form>
+    <form action="muuda_yv.php" method="POST">
+    <p>Uuenda järgmist ülevaatust (esimesse lahtrisse auto ID ja teise uut näit)</p>
+        <input type="number" name="id" required/>
+        <input type="month" name="uusnait" required/>
+        <input type="submit" value="Muuda" />
+    </form>
+    <form action="muuda_oli.php" method="POST">
+    <p>Uuenda järgmist õlivahetust (esimesse lahtrisse auto ID ja teise uut näit)</p>
+        <input type="number" name="id" required/>
+        <input type="number" name="uusnait" required/>
+        <input type="submit" value="Muuda" />
+    </form>
+    <form action="muuda_sparks.php" method="POST" name="muudasparks" onsubmit="return valideeri()">
+    <p>Uuenda järgmist süüteküünalde vahetust (esimesse lahtrisse auto ID ja teise uut näit)</p>
+        <input type="number" name="id" required/>
+        <input type="number" name="uusnait" required/>
+        <input type="submit" value="Muuda"/>
     </form>
 </body>
 </html>
