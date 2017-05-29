@@ -28,9 +28,9 @@ function connect_db(){
     $odo = mysqli_real_escape_string($connection, $_POST["odo"]);
     $yv = mysqli_real_escape_string($connection, $_POST["yv"]);
     $oil = mysqli_real_escape_string($connection, $_POST["oil"]);
-    $kytus = $_POST["kytus"];
+    $kytus = mysqli_real_escape_string($connection, $_POST["kytus"]);
     $sparks = mysqli_real_escape_string($connection, $_POST["sparks"]);
-    $tahmafilter = $_POST["tahmafilter"];
+    $tahmafilter = mysqli_real_escape_string($connection, $_POST["tahmafilter"]);
     $tfhooldus = mysqli_real_escape_string($connection, $_POST["tfhooldus"]);
     
     $query = "INSERT INTO rpurge_autod (Mark, Regnr, kW, Odom, Next_yv, Next_oil, Kytus, Sparks, Tahmafilter, Tahmafiltri_hooldus) VALUES ('$mark', '$regnr', '$kw', '$odo', '$yv', '$oil', '$kytus', '$sparks', '$tahmafilter', '$tfhooldus')";

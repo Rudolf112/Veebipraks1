@@ -23,7 +23,7 @@
     
     ?>
     <table>
-    <tr><th>Mark</th><th>Regnr</th><th>kW</th><th>Odomeetri näit</th><th>Järgmine ülevaatus</th><th>Järgmine õlivahetus</th><th>Kütus</th><th>Süüteküünalde vahetus</th><th>Tahmafilter</th><th>Tahmafiltri hooldus</th></tr>
+    <tr><th>ID</th><th>Mark</th><th>Regnr</th><th>kW</th><th>Odomeetri näit</th><th>Järgmine ülevaatus</th><th>Järgmine õlivahetus</th><th>Kütus</th><th>Süüteküünalde vahetus</th><th>Tahmafilter</th><th>Tahmafiltri hooldus</th></tr>
     
     <?php 
     
@@ -33,6 +33,7 @@
     while($row = mysqli_fetch_row($result))
     {
     echo "<tr>";
+    echo "<td>$row[0]</td>";
     echo "<td>$row[1]</td>";
     echo "<td>$row[2]</td>";
     echo "<td>$row[3]</td>";
@@ -54,5 +55,11 @@
     ?>
     
     </table>
+    <form action="muuda_odo.php" method="POST">
+    <p>Uuenda odomeetri näitu (esimesse lahtrisse auto ID ja teise uut näit)</p>
+        <input type="number" name="id" />
+        <input type="number" name="uusnait" />
+        <input type="submit" value="Muuda" />
+    </form>
 </body>
 </html>
