@@ -54,13 +54,13 @@ function valideeri() {
     <p><a href="vaata.php">Vaata autosid</a></p>
     <form name="vorm" action="lisa.php" method="POST" enctype="multipart/form-data" onsubmit="return valideeri()">
 	   <ul>
-        <li>Mark<br/><input type="text" name="mark" placeholder="mark" value="<?php if (isset($auto['mark'])) echo htmlspecialchars($auto['mark']); ?>"required/></li>
-	    <li>Reg nr<br/><input type="text" name="regnr" placeholder="regnr" title="Auto reg nr kujul 123ABC" pattern="[0-9][0-9][0-9][A-Z][A-Z][A-Z]" value="<?php if (isset($auto['regnr']))  echo htmlspecialchars($auto['regnr']); ?>"required/></li>
-	    <li>kW arv<br/><input type="number" name="kw" placeholder="kW arv" value="<?php if (isset($auto['kw'])) echo htmlspecialchars($auto['kw']); ?>" required/></li>
-        <li>Odomeetri hetknäit<br/><input type="number" name="odo" placeholder="odom näit" value="<?php if (isset($auto['odo'])) echo htmlspecialchars($auto['odo']); ?>"required/></li>
+        <li>Mark<br/><input type="text" name="mark" placeholder="mark" required/></li>
+	    <li>Reg nr<br/><input type="text" name="regnr" placeholder="regnr" title="Auto reg nr kujul 123ABC" pattern="[0-9][0-9][0-9][A-Z][A-Z][A-Z]" required/></li>
+	    <li>kW arv<br/><input type="number" name="kw" placeholder="kW arv" required/></li>
+        <li>Odomeetri hetknäit<br/><input type="number" name="odo" placeholder="odom näit" required/></li>
    
-        <li>Järgmine ülevaatus<br/><input type="month" name="yv" value="<?php if (isset($auto['yv'])) echo htmlspecialchars($auto['yv']); ?>"required/></li>
-        <li>Järgmine õlivahetus(odom näit)<br/><input type="number" name="oil" value="<?php if (isset($auto['oil'])) echo htmlspecialchars($auto['oil']); ?>"required/></li>
+        <li>Järgmine ülevaatus<br/><input type="month" name="yv" required/></li>
+        <li>Järgmine õlivahetus(odom näit)<br/><input type="number" name="oil" required/></li>
            
         <li>Kütus:</li> 
         <li>bensiin<input type="radio" name="kytus" value="bensiin" required>

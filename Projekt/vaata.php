@@ -73,8 +73,14 @@
         <input type="number" name="uusnait" required/>
         <input type="submit" value="Muuda" />
     </form>
-    <form action="muuda_sparks.php" method="POST" name="muudasparks" onsubmit="return valideeri()">
+    <form action="muuda_sparks.php" method="POST">
     <p>Uuenda järgmist süüteküünalde vahetust (esimesse lahtrisse auto ID ja teise uut näit)</p>
+        <input type="number" name="id" required/>
+        <input type="number" name="uusnait" required/>
+        <input type="submit" value="Muuda"/>
+    </form>
+    <form action="muuda_tf.php" method="POST">
+    <p>Uuenda järgmist tahmafiltri hooldust (esimesse lahtrisse auto ID ja teise uut näit)</p>
         <input type="number" name="id" required/>
         <input type="number" name="uusnait" required/>
         <input type="submit" value="Muuda"/>
