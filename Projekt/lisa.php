@@ -32,6 +32,16 @@ function connect_db(){
     $sparks = mysqli_real_escape_string($connection, htmlspecialchars($_POST["sparks"]));
     $tahmafilter = mysqli_real_escape_string($connection, htmlspecialchars($_POST["tahmafilter"]));
     $tfhooldus = mysqli_real_escape_string($connection, htmlspecialchars($_POST["tfhooldus"]));
+
+    if($kytus == "bensiin" && $tahmafilter == "jah"){
+        $tahmafilter = "ei";
+    }
+    if($kytus == "bensiin" && $tfhooldus != ""){
+        $tfhooldus = "";
+    }
+    if($kytus == "diisel" && $sparks != ""){
+        $sparks = "";
+    }
     
     $query = "INSERT INTO rpurge_autod (Mark, Regnr, kW, Odom, Next_yv, Next_oil, Kytus, Sparks, Tahmafilter, Tahmafiltri_hooldus) VALUES ('$mark', '$regnr', '$kw', '$odo', '$yv', '$oil', '$kytus', '$sparks', '$tahmafilter', '$tfhooldus')";
     $result = mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
