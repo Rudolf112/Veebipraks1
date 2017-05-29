@@ -85,5 +85,10 @@
         <input type="number" name="uusnait" required/>
         <input type="submit" value="Muuda"/>
     </form>
+    <form action="kustuta.php" method="POST">
+    <p>KUSTUTA AUTO (ID)</p>
+        <input type="number" name="id" required/>
+        <input type="submit" value="KUSTUTA" onclick="return confirm('Oled kindel? Seda sammu ei saa tagasi võtta!')"/>
+    </form>
 </body>
 </html>

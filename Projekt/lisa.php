@@ -22,16 +22,16 @@ function connect_db(){
     $tahmafilter = "";
     $tfhooldus = "";
         
-    $mark = mysqli_real_escape_string($connection, $_POST["mark"]);
-    $regnr = mysqli_real_escape_string($connection, $_POST["regnr"]);
-    $kw = mysqli_real_escape_string($connection, $_POST["kw"]);
-    $odo = mysqli_real_escape_string($connection, $_POST["odo"]);
-    $yv = mysqli_real_escape_string($connection, $_POST["yv"]);
-    $oil = mysqli_real_escape_string($connection, $_POST["oil"]);
-    $kytus = mysqli_real_escape_string($connection, $_POST["kytus"]);
-    $sparks = mysqli_real_escape_string($connection, $_POST["sparks"]);
-    $tahmafilter = mysqli_real_escape_string($connection, $_POST["tahmafilter"]);
-    $tfhooldus = mysqli_real_escape_string($connection, $_POST["tfhooldus"]);
+    $mark = mysqli_real_escape_string($connection, htmlspecialchars($_POST["mark"]));
+    $regnr = mysqli_real_escape_string($connection, htmlspecialchars($_POST["regnr"]));
+    $kw = mysqli_real_escape_string($connection, htmlspecialchars($_POST["kw"]));
+    $odo = mysqli_real_escape_string($connection, htmlspecialchars($_POST["odo"]));
+    $yv = mysqli_real_escape_string($connection, htmlspecialchars($_POST["yv"]));
+    $oil = mysqli_real_escape_string($connection, htmlspecialchars($_POST["oil"]));
+    $kytus = mysqli_real_escape_string($connection, htmlspecialchars($_POST["kytus"]));
+    $sparks = mysqli_real_escape_string($connection, htmlspecialchars($_POST["sparks"]));
+    $tahmafilter = mysqli_real_escape_string($connection, htmlspecialchars($_POST["tahmafilter"]));
+    $tfhooldus = mysqli_real_escape_string($connection, htmlspecialchars($_POST["tfhooldus"]));
     
     $query = "INSERT INTO rpurge_autod (Mark, Regnr, kW, Odom, Next_yv, Next_oil, Kytus, Sparks, Tahmafilter, Tahmafiltri_hooldus) VALUES ('$mark', '$regnr', '$kw', '$odo', '$yv', '$oil', '$kytus', '$sparks', '$tahmafilter', '$tfhooldus')";
     $result = mysqli_query($connection, $query) or die("$query - ".mysqli_error($connection));
